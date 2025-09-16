@@ -1,7 +1,10 @@
-spring:
-  application:
-    name: ms-registry-server
-  profiles:
-    active: development
-  config:
-    import: optional:configserver:http://root:123456@localhost:7071
+server:
+  port: 8090
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
