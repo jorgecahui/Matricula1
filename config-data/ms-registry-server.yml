@@ -1,11 +1,7 @@
-server:
-  port: 9090
-
 spring:
   application:
     name: ms-registry-server
-
-eureka:
-  client:
-    register-with-eureka: false
-    fetch-registry: false
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://root:123456@localhost:7071
